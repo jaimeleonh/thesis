@@ -1,6 +1,6 @@
 \documentclass[10pt,a4paper]{report}
 \usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel}
+\usepackage[english]{babel}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -10,16 +10,22 @@
 
 \usepackage{subfiles} 
 \author{Jaime León Holgado}
-\title{Thesis}
+\title{Search for Higgs Boson Pair Production at the LHC and studies of a new muon trigger algorithm for HL-LHC}
 \begin{document}
 \maketitle
 
 \tableofcontents
 
-\part{dts}
+
+\subfile{intro/theory}
+\subfile{intro/exp}
+\subfile{intro/id}
+\part{Search for Higgs Boson Pair Production at the LHC}
+\subfile{hh/analysis}
+\subfile{hh/results}
+\subfile{hh/trigger}
+\part{Studies of a new muon trigger algorithm for HL-LHC}
 \subfile{dts/intro}
-\part{hh}
-\subfile{hh/intro}
 
 
 \end{document}
