@@ -5,6 +5,100 @@
 
 The `Analytical Method' (AM) [reference to AM paper] is an algorithm developed for performing muon trigger primitive generation for Phase-2 in the CMS barrel by using information from both DT and RPC systems. It profits from the improved time digitization in Phase-2 DT input hits, 1 ns, much finer than the 25 ns needed for bunch crossing (BX) identification. The muon segment parameters (position and direction) will have a resolution comparable to what is reachable with the present offline reconstruction software \cite{dts:performance_offline}.
 
+\section{Description of the algorithm}
+
+The inputs to the AM algorithm are only the time and cell number of all signals collected in each superlayer. It can be logically separated into several steps.
+
+\subsection{Grouping}
+
+In this step, hits in regions of 10 cells in a given superlayer are considered at a time (Fig.~\ref{dts:fig:triangle}). Whenever a hit is received, the algorithm pivots over its cell looking for other hits that could form a muon physical trajectory (i.e. a straight line). If a 3 or 4-hit pattern can be found, it is selected and sent to the next steps.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Images/triangle.png}
+\end{center}
+\caption{Sketch of a 10-cell group where hit patterns can be reconstructed.}
+\label{dts:fig:triangle}
+\end{figure}
+
+\subsection{Laterality prediction}
+
+Once we obtain every hit pattern, up to four laterality combinations can be obtained using only the cell layout from each pattern. However, we can reduce this number if we also consider the timing information from each hit in the group. In this case, we compute the time difference between each hit and the one with the highest timestamp and compare each difference to some thresholds fixed to give, for every time difference and cell layout combination, only up to three laterality combinations.
+
+\subsection{Fitting}
+
+After building the hit patterns and for each laterality combination obtained in the previous step, the muon primitive's time $t_0$, the bunch crossing (BX) of the proton-proton interaction that produced the muon, the segment local position $x_0$ and the slope with respect to the chamber perpendicular axis $\tan\psi$ are computed in a given superlayer using the formulas extracted using the least squares minimization method. Among all the 4-hit candidates, only the hit laterality combination resulting in the smallest value for the fitted $\chi^2$ is selected. However, for groups of 3 hits all hit laterality asumptions that provide physical solutions are considered as candidates.
+
+\subsection{Correlation}
+
+If at least one fit was obtained in each of the two $r$-$\varphi$ superlayers, a combination of those fits can be performed if their corresponding times lay in a window of $\pm 25$ ns. In that case, a fitting is performed again using those up to 8 hits, obtaining new values for the $t_0$, BX, local position and slope. The corresponding superlayer input segments are then discarded. If no match is found, all superlayer candidates are then kept at this stage.
+
+\subsection{Confirmation}
+
+For every superlayer segment candidates that was not matched in the correlation step, we try to \textit{confirm} the segment candidate by extrapolating it to the other superlayer and matching this extrapolation to at least two additional hits. If this is the case, the segment gets tagged as a \textit{confirmed} segment candidate.
+\\~\\
+Additionally, at different stages of the algorithm, cleaning filters are applied in order to reduce the number of duplicates and fake candidates in the output. 
+For every remaining segment candidate in the output, a quality code is assigned as described in Table \ref{dts:tab:quality}.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{c|c|c}
+		Quality & Description & Type \\\hline
+		1 & 3-hit segment & Uncorrelated \\
+		2 & 3+2 hits segment & Confirmed \\
+		3 & 4-hit segment & Uncorrelated \\
+		4 & 4+2 hits segment & Confirmed \\
+		5 & \multicolumn{2}{c}{Non-existing label} \\
+		6 & 3+3 hits segment & Correlated \\
+		7 & 4+3 hits segment & Correlated \\
+		8 & 4+4 hits segment & Correlated
+	\end{tabular}
+	\caption{Quality descriptions.}
+	\label{dts:tab:quality}
+\end{table}
+
+\subsection{Combination with RPC}
+
+\textcolor{red}{Revise how much do we want to include here}
+
+
+\section{Algorithm performance}
+
+In order to estimate the AM performance, several sets of simulated and real data samples have been used. For the results presented in this chapter, we will consider a 3700 event sample with four prompt muon pairs per event. Each pair consists of 2 back-to-back generated muons with flat $p_T$, $\varphi$  and $\eta$ distributions with a $p_T$ between 2 and 200 GeV and within $|\eta|<1.2$. Overimposed to the signal, additional proton-proton interactions (pile-up, PU) are generated within a window of $\pm16$ BX around the central BX (where the signal muons are generated), fully covering the maximum drift time of $\sim390$ ns, with an average PU of 200 events per bunch crossing. Additionally, the GEANT [reference] simulation configuration takes into account backgrounds from long-lived particles originating from collisions, in particular low-energy neutrons, that can produce hits in the DT chambers evenly over the LHC orbit. The simulation assumes a perfect inter-chamber calibration.
+
+During Phase-2, DT chambers will be exposed to high radiation levels, specially in some regions of the detector, potentially producing aging effects degrading the DT cell performance and lowering the DT chamber efficiency. Several DT ageing scenarios can be simulated by removing in a random way DT hits, according to predefined probabilities. In our results, a scenario equivalent to 3000 fb${}^{-1}$ has been considered, corresponding to extreme ageing effects in the DT detector at the end of Phase-2. This conservative scenario has been based on measurements of the DT chamber performance under high radiation conducted in the new CERN Gamma Irradiation Facility. Theses hit efficiencies have been estimating considering a safety factor of 2 from the expected HL-LHC instantaneous luminosity (2$\times 5\times 10^{34}$ cm${}^{-2}$s${}^{-1}$ and the same safety factor for the expected integrated luminosity ($2\times$3000 fb${}^{-1}$). In this scenario, the lowest DT chamber efficiencies are in the order of 70$\%$ in MB1 of the most external barrel wheels (Wh $\pm2$), raising to 90$\%$ in some sectors from the MB4 and remaining significantly higher for the rest of the DT chambers, as can be seen in Fig.~\ref{dts:fig:ageing}. Despite these values, thanks to the redundancy of the system and to the mitigation measures currently implemented, a good performance of the muon triggering and reconstruction in still expected during Phase-2.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{Images/EfficienciesAging_3000fb_v2}
+\end{center}
+\caption{Expected hit efficiencies at the end of Phase-2 for all the DT chambers of the CMS muon system. The upper plot shows MB4 chambers, the lower shows MB1, MB2 and MB3.}
+\label{dts:fig:ageing}
+\end{figure}
+
+\subsection{Efficiencies to trigger on prompt muons}
+
+In order to obtain TP efficiencies, the denominator is obtained as the number of DT offline segments with at least 4 hits in the r$-\varphi$ view and also 4 hits in the r$-$z view (if available) geometrically matched with a generated muon within a window of 0.15 in $\eta$ and 0.1 rad in $\varphi$. In order to remove segments coming from PU events, a cut on the reconstructed segment time of $\pm 15$ ns is applied. The numerator of the efficiency is defined as the number of trigger primitives whose BX is the one from the collision and matching these segments within a $\varphi$ window of 0.1 rad.
+
+Fig.~\ref{dts:fig:efficiency} summarizes the DT Phase-2 TP efficiency per station and wheel for two ageing scenarios: with no ageing applied and with the ageing scenario corresponding to 3000 fb${}^{-1}$. In both cases, 4 different TP quality thresholds are considered. When no ageing is considered, TP efficiencies are higher than 98$\%$ for a quality threshold of 1 or 2, while the efficiency for correlated TPs is above 80$\%$ in the whole detector. When the 3000 fb${}^{-1}$ ageing scenario is applied, the efficiency drop is larger in the chambers more affected by these ageing effects (as expected), overall for high TP quality thresholds. When lower qualities are considered, the efficiency can be substantially recovered.
+
+
+\begin{figure}[h!]
+
+\begin{center}
+\subfloat[]{\includegraphics[width=0.45\textwidth]{Images/hEff_AM_rossin_noRPC_withAgeing_ext_confok_alignTrue_0}}
+\subfloat[]{\includegraphics[width=0.45\textwidth]{Images/hEff_AM_rossin_noRPC_withAgeing_ext_confok_alignTrue_0}}
+\end{center}
+\caption{\textcolor{red}{DUMMYPLOTS} TP efficiency with respect to segments reconstructed with the offline system considering (a) no ageing scenario or (b) 3000 fb${}^{-1}$ ageing scenario, for four different quality groups.}
+\label{dts:fig:efficiency}
+\end{figure}
+
+
+\subsection{Comparison with offline segments}
+
+
+
+
 \bibliographystyle{plain}
 \bibliography{../biblio.bib}
 
