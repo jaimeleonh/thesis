@@ -1,11 +1,14 @@
 \documentclass[../main.tex]{subfiles}
 
 \begin{document}
+
 \chapter{The Analytical Method}
+
 
 The `Analytical Method' (AM) [reference to AM paper] is an algorithm developed for performing muon trigger primitive generation for Phase-2 in the CMS barrel by using information from both DT and RPC systems. It profits from the improved time digitization in Phase-2 DT input hits, 1 ns, much finer than the 25 ns needed for bunch crossing (BX) identification. The muon segment parameters (position and direction) will have a resolution comparable to what is reachable with the present offline reconstruction software \cite{dts:performance_offline}.
 
 \section{Description of the algorithm}
+\label{sec:dts:description}
 
 The inputs to the AM algorithm are only the time and cell number of all signals collected in each superlayer. It can be logically separated into several steps.
 
@@ -96,11 +99,33 @@ Fig.~\ref{dts:fig:efficiency} summarizes the DT Phase-2 TP efficiency per statio
 
 \subsection{Comparison with offline segments}
 
+Another test to evaluate the performance of the algorithm and the quality of the TP fit results is comparing the values obtained from this fit and its corresponding values of offline reconstructed segments. To do this, we will consider the offline segments that satisfy the same matching and quality criteria used in the efficiency studies.
+
+\begin{itemize}
+	\item \textcolor{red}{Fits}
+	\item \textcolor{red}{Summary plots}
+	\item \textcolor{red}{t0 distribution}
+\end{itemize}
+
+
+\subsection{Rate studies}
 
 
 
-\bibliographystyle{plain}
-\bibliography{../biblio.bib}
+\section{Firmware implementation}
+
+The Drift Tube AM trigger algorithm, already designed in a firmware-oriented approach, has been ported to VHDL in order to estimate the FPGA resources required. This implementation has been validated with real data using emulator-to-firmware comparisons in prototype boards.
+
+The present firmware implementation performs the TP generation in the r$-\varphi$ view of the DT chamber and its consistent with the algorithm description included in section \ref{sec:dts:description}. However, some small differences are present, mainly due to practical constraints. In particular, confirmed qualities and the inclusion of RPC information are not implemented in the firmware version for the moment. 
+
+The present implementation of the algorithm has been performed in a \textcolor{red}{FPGA family} FPGA. On top of the AM algorithm logic, several functionalities have been included to allow the control and operation of the system.
+
+
+
+
+
+%\bibliographystyle{plain}
+%\bibliography{../biblio.bib}
 
 \end{document}
 
