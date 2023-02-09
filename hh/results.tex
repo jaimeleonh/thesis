@@ -3,6 +3,59 @@
 \chapter{Results}
 
 
+\section{Statistical procedure}
+
+The statistical methodology used to evaluate the presence or not of signals in data follows the method used in the 2011 combination of the CMS and ATLAS Higgs boson observation results \cite{hh:results:statistical_model}. This procedure, based on the modified frequentist method (often referred to as CL${}_\text{s}$), aims to quantify the compatibility between the observed data and the background + signal hypothesis or between the data and the background only hypothesis. 
+
+The procedure considers the DNN distributions in the categories, channels and years (from here onwards, event categories) described during the analysis, for both the data, background and signal processes. For each event category, the number of events $n_i$ predicted by the modelling in the bin $i$ of the distribution is defined as
+\begin{equation}
+n_i(\mu, \boldsymbol{\theta_i})=\mu\cdot s_i (\boldsymbol{\theta_i}) + b_i(\boldsymbol{\theta_i}),
+\end{equation}
+where $s_i (\boldsymbol{\theta_i})$ and $b_i(\boldsymbol{\theta_i})$ are the modelled signal and background yields in the given bin, $\mu$ is the \textit{signal strength modifier}, defined as the ratio between the observed signal cross section and the one predicted by the SM, and $\boldsymbol{\theta_i}$ are the \textit{nuisance parameters}, which represent the different uncertainties.
+
+\subsection{Observed and expected limits}
+
+In order to estimate the values of the $\mu$ and their associated uncertainties, a binned \textit{likelihood function} a used to quantify the compatibility between the observed data and the prediction for given values of $\mu$ and the nuisance parameters. This function can be written as the product of the Poisson probabilities to observe $n_i^{obs}$ events in the bin $i$, scaled by the prior nuisance probability distribution:
+\begin{equation}
+L(\mu, \boldsymbol{\theta} | \text{data}) = \prod_i \frac{\left(\mu\cdot s_i (\boldsymbol{\theta_i}) + b_i(\boldsymbol{\theta_i}) \right)^{n_i^\text{obs}}}{n_i^\text{obs}!}e^{(\mu\cdot s_i (\boldsymbol{\theta_i}) + b_i(\boldsymbol{\theta_i}))} \cdot \rho(\boldsymbol{\theta_i}|\boldsymbol{\tilde{\theta_i}})
+\end{equation}
+
+To compare the compatibility of the data with  with different signal + background hypotheses against the bakcground-only hypothesis a \textit{test statistic} $q_\mu$ can be defined as:
+\begin{equation}
+q_\mu = -2 \ln \frac{L(\mu, \boldsymbol{\hat{\theta}}_\mu | \text{data})}{L(\hat{\mu}, \boldsymbol{\hat{\theta}} | \text{data})},
+\end{equation}
+where $\hat{\mu}$ and $\boldsymbol{\hat{\theta}}$ are the parameters that give the maximum value of $L$ and $\boldsymbol{\hat{\theta}}_\mu$ the set of nuisances that corresponds with the maximum value of $L$ for a given $\mu$ value. Higher values of $q_\mu$ correspond to increasing incompatibility with the signal + background hypothesis.
+
+
+
+
+
+\subsection{Nuisance parameters}
+
+Both background and signal event yields are affected by several sources of uncertainties, modelled by introducing nuisance parameters. These nuisance parameters have a probability density function $\rho(\theta|\tilde{\theta})$ associated to some estimate of the nominal value $\tilde{\theta}$ and other parameters regulating its shape. Due to the Bayes' theorem, the probability density can be re-interpreted as a posterior arising from auxiliary measurements of $\tilde{\theta}$:
+\begin{equation}
+\rho(\theta|\tilde{\theta}) \sim p(\theta|\tilde{\theta}) \cdot \pi_\theta(\theta),
+\end{equation}
+where $p(\theta|\tilde{\theta})$ is the probability density function for the auxiliary measurement of $\tilde{\theta}$ and $\pi_\theta(\theta)$ the prior probability distribution.
+
+In the HH$\to$bb$\tau\tau$ analysis, three types or nuisances are considered. 
+\begin{itemize}
+\item Normalization uncertainties: some uncertainties only modify the normalization of one or more processes, affecting all event categories or a limited number of those. Up and down variations of these uncertainties, describing central 68\% confidence intervals, vary the number of events of the distribution equally in all bins. The prior probability distributions on these uncertainties involve Gaussian functions. However, for large uncertainties, the normal distribution is not appropriate. Instead, the log-normal distribution is considered:
+\begin{equation}
+\pi_\theta(\theta) = \frac{1}{\theta}\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(\ln\theta)^2}{2\sigma^2}\right),
+\end{equation}
+where $\sigma$ is the width of the distribution and corresponds to the relative uncertainty, estimated using theoretical calculations or alternative measurements.
+
+\item Shape uncertainties: instead of modifying the whole integral of the distributions, some uncertainties vary the content of individual bins in an event category distribution. These variations are modelled by recreating the distributions but modifying the model parameter according to the boundaries of its central 68\% confidence interval. Using the three distributions, the number of events per bin is smoothly interpolated between the boundaries defined by the up and down distributions.
+
+\item Statistical uncertainties: the amount of simulated events per bin and event category is limited. To model the statistical uncertainties, one possibility is to include one separate nuisance per process and bin following a Poisson distribution, the so-called Barlow-Beeston approach  \cite{hh:results:barlow_beeston}. However, if enough events are available per bin, the sum of Poisson distributions can be approximated by a Gaussian distribution with reasonable accuracy. In that case, only one nuisance per bin is incorporated in the statistical model.
+\end{itemize}
+
+
+
+\subfile{systematics}
+
+
 
 
 
