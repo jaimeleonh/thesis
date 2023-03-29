@@ -55,7 +55,7 @@ Electron identification is performed with a multivariate approach (MVA) updated 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{Images/ele_mva}
 \end{center}
-\caption{Performance of the electron MVA-based identification algorithm with (red) and without (green) the isolation variables, compared to an optimized sequential selection using the BDT without the isolations followed by a selection requirement on the combined isolation (blue). Electrons are selected for the training with an $E_T$ of at least 20 GeV.}
+\caption{Performance of the electron MVA-based identification algorithm with (red) and without (green) the isolation variables, compared to an optimized sequential selection using the BDT without the isolations followed by a selection requirement on the combined isolation (blue). Electrons are selected for the training with an $E_T$ of at least 20 GeV. Extracted from \cite{intro:id:ele_mva}.}
 \label{intro:fig:ele_mva}
 \end{figure}
 
@@ -74,7 +74,7 @@ To reduce jets poorly reconstructed or affected by instrumental noise in the cal
 \subfloat{\includegraphics[width=0.45\textwidth]{Images/Figure_004-a}}
 \subfloat{\includegraphics[width=0.45\textwidth]{Images/Figure_004-b}}
 \end{center}
-\caption{Performance of the CMS PF identification algorithm for the tight working point. Plots from the top row show the efficiency of correctly identifying a PF jet, while the ones in the bottom row show the noise jet background rejection rate. The two plots from the left are shown as a function of the jet $p_T$ for central jets ($|\eta|<0.5$), while right plots are shown as a function of the jet $|\eta|$ for jets with $p_t$ between 30 and 100 GeV.}
+\caption{Performance of the CMS PF jet identification algorithm for the tight working point. Plots from the top row show the efficiency of correctly identifying a PF jet, while the ones in the bottom row show the noise jet background rejection rate. The two plots from the left are shown as a function of the jet $p_T$ for central jets ($|\eta|<0.5$), while right plots are shown as a function of the jet $|\eta|$ for jets with $p_t$ between 30 and 100 GeV. Extracted from \cite{intro:id:pfjetid}.}
 \label{intro:fig:jetid}
 \end{figure}
 
@@ -97,16 +97,39 @@ In order to identify jets coming from the hadronisation of b quarks (b-jets), de
 \includegraphics[width=0.6\textwidth]{Images/btag}
 \end{center}
 \caption{Performance of the CMS DeepJet (blue) and DeepCSV (red) algorithms.  
-The plot represents the probability of misidentifying jets coming from light quarks or gluons (solid lines) or c jets (dashed lines) with respect to the efficiency of correctly identifying jets coming from b quarks. Results are obtained using jets with $|\eta|<2.5$ and $p_T>30$~GeV coming from the decay of simulated $\text{t}\bar{\text{t}}$ events. Loose, medium and tight working points for both algorithms are shown in the plot as circles when obtained directly from the simulation or as triangles after applying the scale factors obtained through data-simulation studies.}
+The plot represents the probability of misidentifying jets coming from light quarks or gluons (solid lines) or c jets (dashed lines) with respect to the efficiency of correctly identifying jets coming from b quarks. Results are obtained using jets with $|\eta|<2.5$ and $p_T>30$~GeV coming from the decay of simulated $\text{t}\bar{\text{t}}$ events. Loose, medium and tight working points for both algorithms are shown in the plot as circles when obtained directly from the simulation or as triangles after applying the scale factors obtained through data-simulation studies. Extracted from \cite{intro:id:deep_csv_jet}.}
 \label{intro:fig:btag}
 \end{figure}
 
 \subsection{Tau leptons}
 \label{intro:subsec:taus}
 
-The $\tau$ lepton is the heaviest lepton, with a mass of $m_\tau = 1.777~$ GeV. This mass is enough to make it decay immediately after its production into a lighter lepton and two neutrinos (leptonic decay) or into hadrons and a $\tau$ neutrino (hadronic decay). In the leptonic decays, the $\tau$ is reconstructed as the correspondent electron or muon. In the hadronic decays, however, the $\tau$ lepton usually decays to charged hadrons (mostly $\pi^\pm$), denoted as \textit{prongs}, and neutral hadrons ($\pi_0$). Therefore, the hadronic $\tau$ ($\tau_h$) has to be reconstructed as a composite object from its PF components. In both decays, neutrinos remain undetected, so it's not possible to measure exactly the momentum of the decaying $\tau$.
+The $\tau$ lepton is the heaviest lepton, with a mass of $m_\tau = 1.777~$ GeV. This mass is enough to make it decay immediately after its production into a lighter lepton and two neutrinos (leptonic decay) or into hadrons and a $\tau$ neutrino (hadronic decay). In the leptonic decays, the $\tau$ is reconstructed as the correspondent electron or muon. In the hadronic decays, however, the $\tau$ lepton usually decays to charged hadrons (mostly $\pi^\pm$), denoted as \textit{prongs}, and neutral hadrons ($\pi_0$). Therefore, the hadronic $\tau$ ($\tau_h$) has to be reconstructed as a composite object from its PF components. In both decays, neutrinos remain undetected, so it's not possible to measure exactly the momentum of the decaying $\tau$. A summary of the existing $\tau$ decay modes and their branching fractions in shown in Table~\ref{id:tab:tau_decay}.
 
-For the $\tau_h$ reconstruction, the \textit{hadrons-plus-strips} (HPS) algorithm \cite{intro:id:hps} is used. This algorithm is seeded by the AK4 PF jets reconstructed as in Section~\ref{intro:subsec:jets} and its constituents. Regarding the $\pi_0$, they promptly decay into a pair of photons, which can then convert into $e^+e^-$ pairs thanks to the amount of tracker material. Electrons and photon candidates in a certain region $\Delta\phi\times\Delta\eta$ are clustered together, building \textit{strips}, so the energy of the $\pi_0$ is measured. Both charged hadrons and strips inside the PF jet are then combined by the HPS algorithm into all the possible combinations of hadrons for the following decay modes: $\text{h}^\pm$, $\text{h}^\pm\pi^0$, $\text{h}^\pm\pi^0\pi^0$ and $\text{h}^\pm \text{h}^\mp \text{h}^\pm$.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l  r}
+Decay Mode & BR (\%)\\\hline\hline
+Leptonic decays \\
+$\tau^- \to e^-\bar{\nu}_e\nu_\tau$ & 17.8 \\
+$\tau^- \to \mu^-\bar{\nu}_\mu\nu_\tau$ & 17.4 \\\hline
+Hadronic decays \\
+$\tau^- \to$~h${}^-\nu_\tau$ & 11.5 \\
+$\tau^- \to$~h${}^-\pi^0\nu_\tau$ & 25.9 \\
+$\tau^- \to$~h${}^-\pi^0\pi^0\nu_\tau$ & 9.5 \\
+$\tau^- \to$~h${}^-$h${}^+$h${}^-\nu_\tau$ & 9.8 \\
+$\tau^- \to$~h${}^-$h${}^+$h${}^-\pi^0\nu_\tau$ & 4.8 \\
+Other & 3.3
+\end{tabular}
+\end{center}
+\caption{Decay modes of the $\tau$ lepton and their branching fractions (BR) in \% \cite{pdg}. Charged hadrons are denoted by h${}^\pm$.}
+\label{id:tab:tau_decay}
+\end{table}
+
+
+For the $\tau_h$ reconstruction, the \textit{hadrons-plus-strips} (HPS) algorithm \cite{intro:id:hps} is used. This algorithm is seeded by the AK4 PF jets reconstructed as in Section~\ref{intro:subsec:jets} and its constituents. Regarding the $\pi_0$, they promptly decay into a pair of photons, which can then convert into $e^+e^-$ pairs thanks to the amount of tracker material. Electrons and photon candidates in a certain region $\Delta\phi\times\Delta\eta$ are clustered together, building \textit{strips}, so the energy of the $\pi_0$ is measured. Both charged hadrons and strips inside the PF jet are then combined by the HPS algorithm into all the possible combinations of hadrons for the following decay modes: $\text{h}^\pm$, $\text{h}^\pm\pi^0$, $\text{h}^\pm\pi^0\pi^0$ and $\text{h}^\pm \text{h}^\mp \text{h}^\pm$ (plus the additional $\nu_\tau$).
+
 
 In order to increase the purity of the $\tau_h$ reconstruction, an identification method, \deeptau{} \cite{intro:id:deeptau}, has been implemented to discriminate real $\tau_h$ from quark and gluon jets, electrons and muons. This algorithm follows a multi-class DNN approach that combines information from high-level reconstructed $\tau$ features, the decay mode extracted from the HPS algorithm and low-level information used to build the PF candidates. Three different discriminators, built to identify $\tau_h$ against jets, electrons and muons, respectively, are defined within the \deeptau{} algorithm, each with its own associated working points:
 \begin{itemize}
@@ -123,11 +146,12 @@ The performance of the three discriminators is shown in Fig.~\ref{intro:fig:deep
 \subfloat[DeepTauVSe]{\includegraphics[width=0.45\textwidth]{Images/deeptauvse}} \\
 \subfloat[DeepTauVSmu]{\includegraphics[width=0.45\textwidth]{Images/deeptauvsmu}}
 \end{center}
-\caption{Performance of the CMS \deeptau{} algorithm. Plots represent the probability of misidentify jets (a), electrons (b) or muons (c) as $\tau_h$ with respect to the efficiency of correctly identifying the $\tau_h$ for the DeepTauVSjet (a), DeepTauVse (b) and DeepTauVSmu (c) discriminators. Working points of the discriminators are indicated as dots. The performance of older discriminators used before the appearance of the \deeptau{} algorithm are also shown for the sake of comparison.}
+\caption{Performance of the CMS \deeptau{} algorithm. Plots represent the probability of misidentify jets (a), electrons (b) or muons (c) as $\tau_h$ with respect to the efficiency of correctly identifying the $\tau_h$ for the DeepTauVSjet (a), DeepTauVse (b) and DeepTauVSmu (c) discriminators. Working points of the discriminators are indicated as dots. The performance of older discriminators used before the appearance of the \deeptau{} algorithm are also shown for the sake of comparison. Extracted from \cite{intro:id:deeptau}.}
 \label{intro:fig:deeptau}
 \end{figure}
 
 \subsection{Missing transverse energy}
+\label{intro:subsec:met}
 
 When two protons collide, the amount of momentum carried by their constituents is unknown. However, their momentum in the transverse plane can be considered as negligible. Therefore, by conservation of momentum, the total momentum in the transverse plane in the initial and in the final state should also be negligible. Then, particles that can't be measured in the detector (neutrinos, BSM particles,...) can be observed by an energy imbalance in the transverse plane. The \textit{missing transverse momentum} is then defined as
 \begin{equation}
