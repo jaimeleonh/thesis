@@ -1,0 +1,156 @@
+%\documentclass[english,master,buw]{webisthesis} % Weimar
+\documentclass[12pt,a4paper,onehalfspacing]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath, bm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\usepackage{geometry}
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{hyperref, bookmark}
+\usepackage{todonotes}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage[left]{lineno}
+\usepackage{fancyhdr}
+
+\usepackage{pdfpages}
+%\usepackage{subfig}
+
+%\usepackage{natbib}
+
+
+%\geometry{body={140mm,210mm},footskip=12mm}
+
+\usepackage{mypackage}
+\usepackage[ornament]{froufrou}
+
+\usepackage{subfiles} 
+\author{Jaime León Holgado}
+\title{Search for Higgs Boson Pair Production at the LHC and studies of a new muon trigger algorithm for HL-LHC}
+
+
+
+\begin{document}
+\pagestyle{fancy}
+\fancyhead{}\fancyfoot{}
+\fancyhead[RE]{\hfill\leftmark}
+\fancyhead[LO]{\hfill\rightmark}
+\fancyfoot[C]{\thepage}
+%\linenumbers
+
+
+
+\begin{titlepage}
+\centering
+	~\\
+	{\Large \textbf{UNIVERSIDAD COMPLUTENSE DE MADRID }\par}
+	\vspace{0.25cm}
+	{\large \textbf{FACULTAD DE CIENCIAS FÍSICAS} \par}
+	\vspace{1cm}
+	\includegraphics[width=0.3\textwidth]{escudo_ucm.png}\par\vspace{1cm}
+	{\Large \textbf{TESIS DOCTORAL} \par}
+	{\Large Search for Higgs boson pair production at the CMS experiment of the LHC and studies of a new trigger algorithm for the muon chambers in HL-LHC \par}
+	\vspace{0.25cm}
+	{\Large Búsqueda de producción de pares de bosones de Higgs en el experimento CMS del LHC y estudios de un nuevo sistema de disparo para las cámaras de muones durante HL-LHC \par}
+	\vspace{1.5cm}
+	{\Large Memoria para optar al grado de doctor \par}
+	{\Large presentada por \par}
+	{\Large \textbf{Jaime León Holgado} \par}
+	\vspace{1cm}
+	{\Large Directora \par}
+	{\Large \textbf{Dra. Silvia Goy López} \par}
+	\vspace{2cm}
+
+\end{titlepage}
+{\let\cleardoublepage\relax \frontmatter}
+\begin{titlepage}
+\centering
+	~\\
+	{\Large \textbf{UNIVERSIDAD COMPLUTENSE DE MADRID }\par}
+	\vspace{0.25cm}
+	{\large \textbf{FACULTAD DE CIENCIAS FÍSICAS} \par}
+	\vspace{1cm}
+	\includegraphics[width=0.3\textwidth]{escudo_ucm.png}\par\vspace{1cm}
+	{\Large \textbf{TESIS DOCTORAL} \par}
+	{\Large Search for Higgs boson pair production at the CMS experiment of the LHC and studies of a new trigger algorithm for the muon chambers in HL-LHC \par}
+	\vspace{0.25cm}
+	{\Large Búsqueda de producción de pares de bosones de Higgs en el experimento CMS del LHC y estudios de un nuevo sistema de disparo para las cámaras de muones durante HL-LHC \par}
+	\vspace{1.5cm}
+	{\Large Memoria para optar al grado de doctor \par}
+	{\Large presentada por \par}
+	{\Large \textbf{Jaime León Holgado} \par}
+	\vspace{1cm}
+	{\Large Directora \par}
+	{\Large \textbf{Dra. Silvia Goy López} \par}
+	\vspace{2cm}
+
+\end{titlepage}
+
+%\includepdf[pages={1}]{1348-2019-04-09-Declaracion-de-autoria-y-originalidad-de-la-tesis-presentada.pdf}
+
+\includepdf[pages={1}]{autoria.pdf}
+
+\newpage
+
+\setlength{\parskip}{0pt}
+\tableofcontents
+\setlength{\parskip}{2mm}
+
+\mainmatter
+
+
+\subfile{intro/abstract}
+\subfile{intro/resumen}
+
+
+\subfile{intro/intro}
+
+\subfile{intro/theory}
+\subfile{intro/exp}
+\subfile{intro/id}
+
+
+\part{Search for Higgs boson pair production at the CMS experiment of the LHC}
+\subfile{hh/analysis}
+\subfile{hh/results}
+\subfile{hh/trigger}
+\part{Studies of a new trigger algorithm for the muon chambers in HL-LHC}
+\subfile{dts/intro}
+
+
+
+\bookmarksetup{startatroot}% this is it
+\addtocontents{toc}{\bigskip}% perhaps as well
+
+
+\subfile{conclusions}
+
+
+%\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+%\renewcommand{\chapter}[2]{}%
+\bibliographystyle{unsrt}
+\bibliography{biblio.bib}
+
+\appendix
+\clearpage
+
+\subfile{appendices/appendix_a}
+\subfile{appendices/appendix_b}
+
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+
+%\subfile{appendices/appendix_a}
+
+\end{document} 

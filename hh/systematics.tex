@@ -1,0 +1,330 @@
+\documentclass[../main.tex]{subfiles}
+\begin{document}
+\section{Systematic uncertainties}
+\label{hh:sec:systematics}
+
+The systematic uncertainties considered in the \hhbbtt{} analysis are discussed in the following sections. Two types of uncertainties are considered: \textit{experimental uncertainties}, coming from the imperfect knowledge of the collected data and the differences in object reconstruction between real data and simulation, and \textit{theoretical uncertainties}, arising from the imperfect modelling of the MC simulations or the limited knowledge of the fundamental parameters.
+
+Both normalization and shape uncertainties are considered in the analysis. Unless the opposite is stated, all uncertainties are uncorrelated among the three years, the analysis categories, and the $\tau\tau$ decay channels.
+
+
+
+\subsection*{Experimental uncertainties}
+
+\subsubsection*{Luminosity}
+
+The uncertainty in the measured integrated luminosity 
+is obtained via dedicated Van-der-Meer scans and the stability of the detector response during data-taking \cite{lumi_1516}. It takes values of 1.2\%, 2.3\% and 2.5\% for the 2016 \cite{lumi_2016}, 2017 \cite{lumi_2017} and 2018 \cite{lumi_2018} datasets respectively. These uncertainties are partially correlated among the three years. These uncertainties are applied to all signals and to all backgrounds that are estimated fully from MC simulation. Given that the normalizations of the $\text{t}\bar{\text{t}}$, $\text{Z}/\gamma^*+~$jets and QCD multi-jet processes are obtained from data, the uncertainty is not applied for these processes.
+
+\subsubsection*{Trigger scale factors}
+
+Four uncertainties in the trigger scale factors are included to take into account the four different \tauh{} decay modes considered in the analysis. They are applied to the \tauh{} present in the final state (both in the \tauh\tauh{} channel). The largest effect in the DNN discriminant is given for the decay mode 1 in the \tauh\tauh{} channel, as shown in Fig.~\ref{hh:fig:trig_syst}a. Two additional uncertainties are used for the $\tau$ decays into an electron or a muon, whose effects are shown in Fig.~\ref{hh:fig:trig_syst}bc. In addition, in 2017 and 2018 in the \tauh\tauh{} channel one further uncertainty source is considered arising from the jet scale factors of the VBF trigger. Its effect on the \tauh\tauh{} channel and the VBF subcategory is shown in Fig.~\ref{hh:fig:trig_syst}d.
+
+
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_bbtt_2018_trigSFDM1_tauTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_bbtt_2018_trigSFele_eTau}}\\
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_bbtt_2018_trigSFmu_muTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_bbtt_2018_trigSFJet_tauTau}}\\
+\end{center}
+\caption[Trigger scale factor uncertainties]{(a) Trigger scale factor uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \tauh\tauh{} channel in 2018 for the decay mode 1. (b) Trigger scale factor uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \taue\tauh{} channel in 2018 for the $\tau$ decay into an electron. (c) Trigger scale factor uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \taumu\tauh{} channel in 2018 for the $\tau$ decay into a muon. (d) Trigger scale factor uncertainty variations on the DNN discriminant in the VBF subcategory and the \tauh\tauh{} channel in 2018 for the trigger jets in the VBF trigger. Contributions of all expected backgrounds are added.}
+\label{hh:fig:trig_syst}
+\end{figure}
+
+\subsubsection*{Lepton reconstruction, isolation and identification}
+
+Electron and muon reconstruction, isolation, and identification uncertainties are determined 
+from the simulation-to-data scale factors; a value of 1~\% is obtained for both electrons and muons. For $\tau_h$, the corresponding systematic uncertainty is 3 (15)\% for $p_T<100$~GeV ($p_T>100$~GeV).
+
+\subsubsection*{L1 ECAL trigger prefiring}
+
+The uncertainty on the correction factor used to account for the L1 prefiring is obtained from the combination of the statistical uncertainty associated to the $p_T$ and $\eta$ bin considered for each photon and jet, and the systematic uncertainty, taken as the 20\% of the prefiring rate. This uncertainty only has a rate-changing effect and takes a value of 2\%. 
+
+\subsubsection*{PU reweighting}
+
+The uncertainty on the PU reweighting technique comes from the uncertainty on the inelastic pp total cross section, which takes a value of 4.6\%. This value is then propagated to the PU weight generating its up and down variations. The resulting systematic uncertainty is estimated to have a value of 1\%.
+
+\subsubsection{PU jet identification}
+
+Uncertainties in he PU jet identification scale factors are included as functions of the jet $p_T$ and $\eta$. These uncertainties modify the weight of each event, not the individual objects. The resulting up and down templates for the DNN discriminant in the Resolved, 2 b-tag category and the \tauh\tauh{} channel are shown in Fig.~\ref{hh:fig:pujet_syst}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Images/systematics/comb_CMS_eff_j_PUJET_id_2018_eTau}
+\end{center}
+\caption[PU jet ID uncertainty]{PU jet ID uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \tauh\tauh{} channel in 2018. Contributions of all expected backgrounds are added.}
+\label{hh:fig:pujet_syst}
+\end{figure}
+
+\subsubsection*{$\text{t}\bar{\text{t}}$ normalization}
+
+The normalization of the $\text{t}\bar{\text{t}}$ background is taken from a fit to a $\text{t}\bar{\text{t}}$ enriched control region for each year, as shown in Section~\ref{hh:subsec:tt}. The resulting systematic uncertainty is below 1\% for each year.
+
+\subsubsection*{$\text{Z}/\gamma^*+~$jets normalization}
+
+The normalization of the $\text{Z}/\gamma^*+~$jets background is taken from a fit to 18 $\text{Z}/\gamma^*+~$jets enriched control regions per year, as described in Section~\ref{hh:subsec:dy}. The resulting uncertainties range from 0.1 to 60\% depending on the year and the control region considered.
+
+\subsubsection*{QCD multi-jet}
+
+The contribution from QCD multi-jet background is determined using the ABCD method as described in Section~\ref{hh:subsec:qcd}. Assuming that the contribution of the QCD multi-jet background is constant in the four regions considered (A, B, C and D), three uncertainties can be defined, all uncorrelated across categories, $\tau\tau$ decay channels and years:
+\begin{itemize}
+\item \textbf{Shape uncertainty}: as shown in Section~\ref{hh:subsec:qcd}, the QCD multi-jet background shape is extracted from the selection included in region C. However, an additional estimation can be obtained if, instead of taking the shape from region C and computing the factor $k$ as the ratio of the yields coming from regions B and D, the shape was taken from region B and the factor $k$ is computed as the ratio between regions C and D. In fact, as shown in Figs.~\ref{hh:fig:qcd_shape_from_c} and \ref{hh:fig:qcd_shape_from_b}, the data/background agreement is very comparable when considering these two strategies. Therefore, the QCD background shape used in the analysis will come from the average of the shapes from the two regions. The two alternative shapes (from C and B) are considered as the up and down templates for the QCD shape uncertainty.
+\item \textbf{Uncertainty on the yield correction factor}: the statistical uncertainty on the correction factor B/D is a normalization uncertainty defined as the sum in quadrature of the statistical uncertainties on the event yields in regions B and D. The value of this uncertainty ranges from 5\% to 100\% depending on the category, channel and year considered.
+\item \textbf{Additional uncertainty}: this normalization uncertainty is added only in the cases where the C/D factor obtained using the standard QCD definition of the C and D regions does not agree within uncertainties with the weighted average of the four alternative C/D yield points defined in the first validation test (see Section~\ref{hh:sec:validation_qcd}) for the QCD multi-jet background estimation. It follows the expression
+\begin{equation}
+\text{add\_unc} = \sqrt{\left(\frac{(\text{C/D})_{\text{standard}} - (\text{C/D})_{\text{average}}}{(\text{C/D})_{\text{standard}}} \right)^2 - \left(\frac{\Delta(\text{C/D})_{\text{standard}}}{(\text{C/D})_{\text{standard}}} \right)^2}.
+\end{equation}
+\end{itemize}
+
+
+Table~\ref{hh:tab:qcd_unc} shows the QCD normalization percentage relative uncertainty for all years, channels and categories considered. For each cell, the first number is the statistical uncertainty on the yield correction factor, while the second (if it appears) is the additional uncertainty as defined above. The cell is empty if no QCD could be estimated (as either regions B, C or D have negative yield). Note that the statistical
+uncertainty for all the VBF subcategories in the same year and channel is the same, as it comes from the VBF inclusive category (described in Section~\ref{hh:sec:event_categorization}).
+
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Boosted]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/boosted/DNNoutSM_kl_1__pg_plots__qcd__blinded__tautau_os_iso__stack}}
+\subfloat[Resolved, 1 b-tag]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/resolved_1b/DNNoutSM_kl_1__pg_plots__qcd__blinded__tautau_os_iso__stack}}
+\subfloat[Resolved, 2 b-tag]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/resolved_2b/DNNoutSM_kl_1__pg_plots__qcd__blinded__tautau_os_iso__stack}} \\
+\subfloat[VBF subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_hh_vbf_sm_c2v_merged_mpp__pg_plots__qcd__tautau_os_iso__stack}}
+\subfloat[ggF subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_hh_ggf_merged_mpp__pg_plots__qcd__tautau_os_iso__stack}}
+\subfloat[$\text{t}\bar{\text{t}}$ subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_tt_merged_mpp__pg_plots__qcd__tautau_os_iso__stack}} \\
+\subfloat[$\text{t}\bar{\text{t}}$H subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_tth_merged_mpp__pg_plots__qcd__tautau_os_iso__stack}}
+\subfloat[DY subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_dy_merged_mpp__pg_plots__qcd__tautau_os_iso__stack}}
+\end{center}
+\caption[DNN output distributions taking QCD shape from region C]{DNN output distributions for the analysis categories in the signal region, \tauh\tauh{} channel and 2018. QCD background is estimated from the ABCD method taking the shape from region C and the $k$ factor from B/D.}
+\label{hh:fig:qcd_shape_from_c}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[Boosted]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/boosted/DNNoutSM_kl_1__pg_plots__qcd_from_ss_iso__blinded__tautau_os_iso__stack}}
+\subfloat[Resolved, 1 b-tag]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/resolved_1b/DNNoutSM_kl_1__pg_plots__qcd_from_ss_iso__blinded__tautau_os_iso__stack}}
+\subfloat[Resolved, 2 b-tag]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/resolved_2b/DNNoutSM_kl_1__pg_plots__qcd_from_ss_iso__blinded__tautau_os_iso__stack}}\\
+\subfloat[VBF subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_hh_vbf_sm_c2v_merged_mpp__pg_plots__qcd_from_ss_iso__tautau_os_iso__stack}}
+\subfloat[ggF subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_hh_ggf_merged_mpp__pg_plots__qcd_from_ss_iso__tautau_os_iso__stack}}
+\subfloat[$\text{t}\bar{\text{t}}$ subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_tt_merged_mpp__pg_plots__qcd_from_ss_iso__tautau_os_iso__stack}}\\
+\subfloat[$\text{t}\bar{\text{t}}$H subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_tth_merged_mpp__pg_plots__qcd_from_ss_iso__tautau_os_iso__stack}}
+\subfloat[DY subcat.]{\includegraphics[width=0.33\textwidth]{Images/qcd_tests/shapes/2018/vbf/DNNoutSM_kl_1_dy_merged_mpp__pg_plots__qcd_from_ss_iso__tautau_os_iso__stack}}
+\end{center}
+\caption[DNN output distributions taking QCD shape from region B]{DNN output distributions for the analysis categories in the signal region, \tauh\tauh{} channel and 2018. QCD background is estimated from the ABCD method taking the shape from region B and the $k$ factor from C/D.}
+\label{hh:fig:qcd_shape_from_b}
+\end{figure}
+
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{c | c | c | c | c}
+                                        &                  & 2016         & 2017         & 2018         \\\hline
+                                        & $\tau_h\tau_h$   & 198.0        & 44.5         & 60.6         \\
+    Boosted                             & $\tau_\mu\tau_h$ & $-$          & $-$          & $-$          \\
+                                        & $\tau_e\tau_h$   & $-$          & $-$          & $-$          \\
+    \hline
+                                        & $\tau_h\tau_h$   & 7.6          & 5.9          & 4.7          \\
+    Resolved, 1 b-tag                        & $\tau_\mu\tau_h$ & 7.1          & 7.4          & 13.6         \\
+                                        & $\tau_e\tau_h$   & 14.8         & 10.0         & 10.0         \\
+    \hline
+                                        & $\tau_h\tau_h$   & 118.5        & 21.9         & 21.6         \\
+    Resolved, 2 b-tag                       & $\tau_\mu\tau_h$ & 18.6         & 17.7         & 10.8         \\
+                                        & $\tau_e\tau_h$   & 42.8         & $-$          & $-$          \\
+    \hline
+                                        & $\tau_h\tau_h$   & 27.2         & 23.2         & 14.1         \\
+    VBF subcategory         & $\tau_\mu\tau_h$ & 81.7         & 26.7 , 36.2  & 11.6         \\
+                                        & $\tau_e\tau_h$   & 122.0        & 33.1         & $-$          \\
+    \hline
+                                        & $\tau_h\tau_h$   & 27.2         & 23.2         & 14.1         \\
+    ggF subcategory                     & $\tau_\mu\tau_h$ & $-$          & $-$          & 11.6         \\
+                                        & $\tau_e\tau_h$   & $-$          & $-$          & $-$          \\
+    \hline
+                                        & $\tau_h\tau_h$   & 27.2         & 23.2         & 14.1         \\
+    $\text{t}\bar{\text{t}}$ subcategory& $\tau_\mu\tau_h$ & $-$          & $-$          & 11.6         \\
+                                        & $\tau_e\tau_h$   & $-$          & $-$          & 25.7         \\
+    \hline
+                                        & $\tau_h\tau_h$   & $-$          & 23.2         & 14.1         \\
+    $\text{t}\bar{\text{t}}$H subcategory                    & $\tau_\mu\tau_h$ & 81.7         & $-$          & $-$          \\
+                                        & $\tau_e\tau_h$   & $-$          & $-$          & $-$          \\
+    \hline
+                                        & $\tau_h\tau_h$   & 27.2         & 23.2         & 14.1         \\
+    DY subcategory                     & $\tau_\mu\tau_h$ & 81.7 , 81.2  & 26.7         & 11.6 , 7.7   \\
+                                        & $\tau_e\tau_h$   & $-$          & $-$          & 25.7         \\
+     \hline
+    \end{tabular}
+  \end{center}
+    \caption[QCD normalization percentage relative uncertainty]{QCD normalization percentage relative uncertainty. For each cell, the first number is the statistical uncertainty on the yield correction factor, while the second (if it appears) is the additional uncertainty.
+    The cell is empty if no QCD could be estimated (as either regions B, C or D have negative yield). Note that the statistical uncertainty for all the VBF subcategories in the same year and channel is the same, as it comes from the VBF inclusive category.}
+	\label{hh:tab:qcd_unc}
+\end{table}
+
+\subsubsection*{\tauh{} energy scale}
+
+The uncertainty on the measurement of the $\tau_h$ energy measurement can lead to a change in the distribution of the discriminant variables. An uncertainty on the energy scale of each \tauh{} is derived by combining low- and high-$p_T$ measurements in Z$\to\tau\tau$ and $\text{W}^*\to\tau\nu$ events. Four different uncertainties are included, one for each \tauh{} decay mode considered in the analysis. Each uncertainty only applies to the \tauh{} reconstructed with the specific decay mode, the others remain unchanged. The largest effects are found in the $\tau_h\tau_h$ channel and the decay modes 1 and 10, as shown in Fig.~\ref{hh:fig:tes_syst}ab.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_scale_t_DM1_2018_tauTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_scale_t_DM10_2018_tauTau}}\\
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_scale_t_eFake_2018_DM0_eTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_scale_t_eFake_2018_DM1_eTau}}\\
+\end{center}
+\caption[Tau energy scale uncertainties]{(Top) \tauh{} energy scale uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \tauh\tauh{} channel in 2018 for the decay modes 1 (a) and 10 (b). (Bottom) Electron faking $\tau_h$ energy scale uncertainty variations in the Resolved, 2 b-tag category and the \taue\tauh{} channel in 2018 for the decay modes 0 (c) and 1 (d). Contributions of all expected backgrounds are added.}
+\label{hh:fig:tes_syst}
+\end{figure}
+
+
+\subsubsection*{Energy scale of electrons and muons misidentified as \tauh{}}
+
+Separate uncertainties in the energy scale of electrons misidentified as \tauh{} candidates are provided to take into account the h${}^\pm$ and h${}^\pm\pi^0$ decay modes. The largest effect from these uncertainties is seen in the \tauh\tauh{} channel, shown in Fig.~\ref{hh:fig:tes_syst}cd for the Resolved, 2 b-tag category.
+
+For the muons misidentified as \tauh{} candidates, the uncertainty in the energy scale is 1\%, uncorrelated across decay modes.
+
+\subsubsection*{Jets faking \tauh}
+
+Uncertainties coming from the misidentification of jets as \tauh{} candidates are estimated with a control region in the \taumu\tauh{} channel defined by inverting the charge requirement on the $\tau\tau$ pair and imposing that neither of the b jet candidates pass the medium DeepJet working point. The uncertainties are computed as the difference between the total yield from data and from background in this region divided by the total yield in data. Two uncorrelated uncertainties are derived per year, one for the barrel and another one for the endcap, taking values from 11\% to 28\% depending on the year and region.
+
+\subsubsection*{Jet energy scale and resolution}
+
+Several uncertainties related to the calibration of the jet energy scale (JES) and resolution (JER) are included. For JES, 26 independent sources are identified \cite{hh:corr:smearing_8TeV}. However, for analysis mildly sensitive to jet energy corrections (as is the \hhbbtt{} analysis), these uncertainties are grouped into 11 separate sources per year. The ones common between years are treated as fully correlated, while the ones appearing only in one year are left as uncorrelated. The effects of two of the sources with the largest impact are shown in Fig.~\ref{hh:fig:jec_syst}ab. For JER, the energy of the simulated jets is smeared in order to match the observed energy resolution in data, as shown in Section~\ref{hh:sec:corrections}. An uncertainty on the JER correction factor is provided in different regions of $\eta$ and $p_T$ for each year, resulting in a shift in the final distributions. These shifted distributions are shown in Fig.~\ref{hh:fig:jec_syst}cd for the \taue\tauh{} and \tauh\tauh{} channels in the Resolved, 2 b-tag category in 2018.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_scale_j_Abs_tauTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_scale_j_HF_2018_tauTau}}\\
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_res_j_2018_eTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_res_j_2018_tauTau}}\\
+\end{center}
+\caption[Jet energy corrections' uncertainties]{(Top) Jet energy scale uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \taumu\tauh{} (a) and \tauh\tauh{} (b) channels in 2018. (Bottom) Jet energy resolution uncertainty variations in the Resolved, 2 b-tag category and the \taue\tauh{} (c) and \tauh\tauh{} (d) channels in 2018. Contributions of all expected backgrounds are added.}
+\label{hh:fig:jec_syst}
+\end{figure}
+
+
+\subsubsection*{DeepTau identification}
+
+Several uncertainties coming from the application of the different DeepTau identification scale factors is determined by using a tag-and-probe procedure as a function of the \tauh{} candidate $p_T$. For the identification of \tauh{} against jets, five uncertainties are provided, binned between 20 and 25 GeV, 25 and 30 GeV, 30 and 35 GeV, 35 and 40 GeV, and from 40 GeV onwards. The last bin produces the largest variations, shown in Fig.~\ref{hh:fig:deeptau_syst}ab for the \taumu\tauh{} and \tauh\tauh{} channels. For the identification of tau leptons against electrons, two additional uncertainties are included, one for the barrel and another one for the endcap, treated as uncorrelated between them. The shifted distributions produced by these systematics are shown for the \taue\tauh{} in Fig.~\ref{hh:fig:deeptau_syst}cd.
+
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_eff_t_id_pt40toInf_2018_muTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_eff_t_id_pt40toInf_2018_tauTau}}\\
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_bbtt_2018_etauFR_barrel_eTau}}
+\subfloat[]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_bbtt_2018_etauFR_endcap_eTau}}\\
+\end{center}
+\caption[\deeptau{} uncertainties]{(Top) DeepTau identification scale factor ($p_T(\tau_h)>40$~GeV) uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \taumu\tauh{} (a) and \tauh\tauh{} (b) channels in 2018. (Bottom) Electron faking \tauh{} scale factor uncertainty variations in the Resolved, 2 b-tag category and the \taue\tauh{} channel in the barrel (c) and endcap (d). Contributions of all expected backgrounds are added.}
+\label{hh:fig:deeptau_syst}
+\end{figure}
+
+\subsubsection*{b-tagging efficiency}
+
+The uncertainties included in the b-tagging efficiency cover both the contamination from udscg (cb) jets in heavy- (light-) flavor regions and the statistical fluctuations in the data and simulation samples used for the computation of the efficiency. The uncertainties coming from statistical fluctuations are uncorrelated between years, while the ones arising from the jet contamination in light-flavor or heavy-flavor regions are correlated between years. The latter produce the largest variations on the DNN discriminator shape and rate; their corresponding shifted distributions on the \tauh\tauh{} channel are shown in Fig.~\ref{hh:fig:btag_syst}.
+
+\begin{figure}[h!]
+\begin{center}
+\subfloat[b-tagging efficiency uncertainties]{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_btag_LF_2016_2017_2018_tauTau}}
+\subfloat{\includegraphics[width=0.49\textwidth]{Images/systematics/comb_CMS_btag_HF_2016_2017_2018_tauTau}}
+\end{center}
+\caption[b-tagging efficiency scale factor uncertainties]{b-tagging efficiency scale factor uncertainty variations on the DNN discriminant in the Resolved, 2 b-tag category and the \tauh\tauh{} channel in 2018 in the light-flavor (left) and heavy-flavor (right) regions. Contributions of all expected backgrounds are added.}
+\label{hh:fig:btag_syst}
+\end{figure}
+
+
+\subsection*{Theoretical and modelling uncertainties}
+
+\subsubsection*{HH production cross section}
+
+The theoretical uncertainty in the cross section HH production via ggF is ${}^{+6\%}_{-23\%}$ (scale + $m_t$) $\pm 3\%$ (PDF + $\alpha_s$)~fb \cite{hh:results:ggf_xs} and via VBF ${}^{+0.03\%}_{-0.04\%}$ (scale) $\pm 2.1\%$ (PDF + $\alpha_s$) \cite{hh:results:vbf_xs}. These uncertainties are only considered when upper limits on the signal strength modifier are obtained, not in the upper limits on the cross section.
+
+\subsubsection*{H branching fractions}
+
+Two uncertainties are included to account for the Higgs boson decay \cite{hh:results:h_bf} into bb and $\tau\tau$: $\pm 0.65\%$ (theory) ${}^{+0.72\%}_{-0.74\%}$ ($m_q$) ${}^{+0.78\%}_{-0.80\%}$ ($\alpha_s$) and 
+${}^{+1.16\%}_{-1.17\%}$  (theory) ${}^{-0.98\%}_{-0.99\%}$ ($m_q$) $\pm 0.62\%$ ($\alpha_s$) respectively, where $m_q$ stands for the quark mass. As in the HH production cross section uncertainties, these are only included when computing the limit with respect to the SM expectation.
+
+\subsubsection*{Background cross sections}
+
+For the processes modelled exclusively from simulated events, several normalization uncertainties are included due to the imperfect knowledge of the process cross section. Their values are reported in Tab.~\ref{hh:tab:xs_unc}. These uncertainties come from the modelling of the PDFs (denoted in the table as pdf\_*) and the determination of $\alpha_S$ (strong interaction coupling) and QCD scale (energy scale used to absorb infrared divergences), denoted as $\alpha_S$\_* and QCDscale\_*, respectively. 
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{c | c }
+Uncertainty & Value (\%) \\\hline
+QCDscale\_ZH & +3.8/-3.0 \\
+pdf\_ZH & $\pm1.3$ \\
+$\alpha_S$\_ZH & $\pm0.9$ \\
+QCDscale\_WH & +0.5/-0.7 \\
+pdf\_WH & $\pm1.7$ \\
+$\alpha_S$\_WH & $\pm0.9$ \\
+QCDscale\_t$\bar{\text{t}}$H & +5.8/-9.2 \\
+pdf\_t$\bar{\text{t}}$H & $\pm3.0$ \\
+$\alpha_S$\_t$\bar{\text{t}}$H & $\pm2$ \\
+QCDscale\_ggH & $\pm3.9$ \\
+pdf\_ggH & $\pm1.9$ \\
+$\alpha_S$\_ggH & $\pm2.6$ \\
+QCDscale\_qqH & +0.4/-0.3 \\
+pdf\_qqH & $\pm2.1$ \\
+$\alpha_S$\_qqH & $\pm0.5$ \\
+QCDscale\_singleT & +4.2/-3.5 \\
+QCDscale\_tW & $\pm5.4$ \\
+QCDscale\_W & +0.8/-0.4 \\
+QCDscale\_EWK & $\pm2$ \\
+QCDscale\_VV & $\pm10$ \\
+QCDscale\_VVV & $\pm10$ \\
+\end{tabular}
+\end{center}
+\caption[Theoretical uncertainties on the background production cross sections]{Theoretical uncertainties on the background production cross sections.}
+\label{hh:tab:xs_unc}
+\end{table}
+
+
+\subsubsection*{VBF dipole recoil uncertainty}
+
+The default CMS showering Pythia8 configuration used in the standard MC production does not provide a good modelling of the third leading jet distribution for the VBF signal \cite{hh:results:dipole_recoil}. This can be improved by setting the dipole recoil option, available in recent Pythia8 versions, to ON. Additional VBF signal samples with \kvv=1 and \kvv=2 (with the other couplings set to their SM expectations) were produced for 2017 and 2018 using this alternative option, and have been used to compute a normalization systematic uncertainty to the standard VBF signal samples due to this effect.
+
+The uncertainty is computed per event category taking the most conservative value between:
+\begin{itemize}
+\item The ratio of integrated yields in the dipole recoil ON/OFF samples augmented by its statistical uncertainty.
+\item The ratio in normalised per bin yields in the corresponding DNN distributions, where the yield per DNN bin has been normalized by the yield in the highest statistics bin in the standard VBF sample with dipole recoil OFF.
+\end{itemize}
+
+An example of both computations is shown in Fig.~\ref{hh:fig:dipole_recoil} for the 2018 samples with \kvv=1 in the VBF subcategory.
+
+\begin{figure}[t!]
+\begin{center}
+\subfloat{\includegraphics[width=0.49\textwidth]{Images/vbf_dipole_mean}}
+\subfloat{\includegraphics[width=0.49\textwidth]{Images/vbf_dipole_norm}}
+\end{center}
+\caption[Dipole recoil uncertainties]{Dipole recoil ON/OFF uncertainty tests for the 2018 VBF samples with \kvv=1 in the VBF subcategory. Left: Ratio between the DNN distributions. Red lines show the ratio of integrated yields and its symmetric with respect to 1 and blue lines after augmenting this ratio by the statistical uncertainty. The dipole recoil uncertainty (up and down templates) derived from this plot is taken by substracting 1 to the blue lines. Right: Ratio between the DNN distributions after normalizing by the yield in the bin with the highest statistics. The uncertainty (up and down templates) derived from this plot is taken from the bin with the largest deviation in absolute value and its opposite.}
+\label{hh:fig:dipole_recoil}
+
+\end{figure}
+
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{c | c  c c}
+Category / Channel                     & \taue\tauh & \taumu\tauh & \tauh\tauh \\\hline
+Boosted                                & 20.4        & 39.3       & 19.8 \\
+Resolved, 1 b-tag                      & 14.5        & 11.8       & 21.9 \\
+Resolved, 2 b-tag                      & 26.9        & 15.4       & 17.1 \\
+VBF subcategory   					   & 16.3        & 18.7       &  9.0 \\
+ggF subcategory                        & 55.2        & 50.4       & 33.7 \\
+$\text{t}\bar{\text{t}}$ subcategory   & 42.0        & 41.7       & 56.7 \\
+$\text{t}\bar{\text{t}}$H  subcategory & 67.2        & 69.6       & 70.5 \\
+DY subcategory                         & 46.7        & 48.3       & 52.3 \\
+\end{tabular}
+\end{center}
+\caption[VBF dipole recoil uncertainty]{VBF dipole recoil uncertainty values in \%.}
+\label{hh:tab:dipole_recoil}
+\end{table}
+
+
+The final uncertainty has been set to be the same for all six VBF processes used in the signal modelling in all years for each category and channel by taking the most conservative value between 2017 and 2018 and both \kvv values. The uncertainty can be seen in Table~\ref{hh:tab:dipole_recoil} and is considered as correlated between years and categories, but uncorrelated between the three channels.
+
+
+
+
+
+
+
+\end{document}
+
